@@ -28,7 +28,7 @@ def fibonacci_sequence(n):
     
 def main():
     for _ in range(5): 
-        n = positive_integer()
+        n = get_positive_integer()
     if n is not None:
         fibonacci_sequence(n)
     else:
