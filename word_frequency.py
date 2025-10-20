@@ -4,6 +4,7 @@
 # TODO: (Read detailed instructions in the Readme file)
 
 import re
+import string
 
 #This is a function that checks if a text qualifies as a sentence. You do not need to modify this!
 def is_sentence(text):
@@ -26,7 +27,7 @@ def is_sentence(text):
     return True
     
 def get_sentence():
-    user_sentence = input("Enter a sentence:")
+    user_sentence = input("Enter a sentence: ")
     while not is_sentence(user_sentence):
         print("This does not meet the criteria for a sentence.")
         user_sentence = input("Enter a sentence:")
@@ -41,17 +42,17 @@ def calculate_frequencies(sentence):
     frequencies = []
 
     for word in words:
-    if word in unique_words:
-        index = unique_words.index(word)
-        frequencies[index] += 1
-    else:
-        unique_words.append(word)
-        frequencies.append(1)
+        if word in unique_words:
+            index = unique_words.index(word)
+            frequencies[index] += 1
+        else:
+            unique_words.append(word)
+            frequencies.append(1)
     return unique_words, frequencies
 
 def print_frequencies(words, frequencies):
-    for i in range(len(unique_words)):
-        print(f"{unique_words[i]}: {frequencies[i]}")
+    for i in range(len(words)):
+        print(f"{words[i]}: {frequencies[i]}")
 
 def main():
     sentence = get_sentence()
